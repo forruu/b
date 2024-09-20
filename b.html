@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maffff</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .gift-box {
+            width: 120px;
+            height: 120px;
+            background-color: #ff6f61;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+        .gift-box:hover {
+            transform: scale(1.1);
+        }
+        .ribbon {
+            width: 100%;
+            height: 15px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .ribbon:before, .ribbon:after {
+            content: '';
+            width: 20px;
+            height: 100%;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+        }
+        .ribbon:before {
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+        .ribbon:after {
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+        }
+        .gift-box p {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+        /* Modal */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.4); 
+        }
+        .modal-content {
+            background-color: white;
+            margin: 20% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            text-align: center;
+            border-radius: 10px;
+        }
+        .modal button {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal button:hover {
+            background-color: #ff5a4d;
+        }
+        /* Gif */
+        .gif {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gift-box" onclick="openGift()">
+        <div class="ribbon"></div>
+        <p>Open me!</p>
+    </div>
+
+    <div id="modalGift" class="modal">
+        <div class="modal-content">
+            <p>sayang aku minta maaf yaa, aku kemarin telat bales chat kamu, pas itu aku mau dnd karena udah banyak tugas,
+                belum lagi job reor terus juga udah mepet deadline, terus aku bilang mau tidur gasik tapi ga bisa (grup dd masi rame dan ada yang butuh bantuan) jadi aku tidur jam set 10, 
+                iyaa aku tau aku salah, aku harap kamu bisa maafin aku <b>;[</b> 
+            </p>
+            <button onclick="closeModalGift()">Lanjut</button>
+        </div>
+    </div>
+
+    <!-- Modal 2: Maaf -->
+    <div id="modalMaaf" class="modal">
+        <div class="modal-content">
+            <p> <b>maaff banget sayang</b><br>
+              i love u ❤️
+            </p>
+            <button onclick="closeModalMaaf()">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        function openGift() {
+          
+            document.getElementById('modalGift').style.display = 'block';
+        }
+    
+        function closeModalGift() {
+        
+            document.getElementById('modalGift').style.display = 'none';
+            document.getElementById('modalMaaf').style.display = 'block';
+        }
+    
+        function closeModalMaaf() {
+            document.getElementById('modalMaaf').style.display = 'none';
+        
+        }
+    </script>
+    
+</body>
+</html>
